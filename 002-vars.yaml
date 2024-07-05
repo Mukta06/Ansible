@@ -1,0 +1,30 @@
+# Variable Precendece : cli variables > task variables > play variables
+
+### When to use quotes and when not to use quotes in YAML while dealing with variables ?
+
+###  ---> if in your print msg, if you just have varaible, then it's a must to enclose them in "" 's 
+
+- name: Demo On Variables
+  hosts: all
+  vars:
+    URL: play.google.com
+  tasks:
+    - name: Printing the Var value from Play
+      ansible.builtin.debug:
+        msg: Value of the play Variable is {{URL}}
+
+
+    - name: Printing the Var value from tasks
+      ansible.builtin.debug:
+        msg: Value of the task variable is {{URL}}
+      vars:
+        URL: task.google.com
+
+    - name: Printing the Var value which is not declared
+      ansible.builtin.debug:
+        msg: Value of the undeclared Variable is {{CITY}}
+
+
+
+
+    
