@@ -8,6 +8,7 @@
   hosts: all
   vars:
     URL: play.google.com
+  #gather_facts: false  --> If ou dont want ansible to gather facts before exctn ...observe OK=3/4 its by default includes gather_facts if you dont disbale it.
   tasks:
     - name: Printing the Var value from Play
       ansible.builtin.debug:
@@ -23,6 +24,10 @@
     - name: Printing the Var value which is not declared
       ansible.builtin.debug:
         msg: Value of the undeclared Variable is {{CITY}}
+
+    - name: Printing OS Distro
+      ansible.builtin.debug:
+        msg: My OS Distro is  {{ansible_distribution}}
 
 # Can supply var value from cmd line arg (cli)---> ansible-playbook -i inv -e ansible_user=centos -e ansible_password=DevOps321 -e CITY=Bangalore 002-vars.yaml
 
