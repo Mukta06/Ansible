@@ -24,6 +24,13 @@
       ansible.builtin.debug:
         msg: Value of the undeclared Variable is {{CITY}}
 
+# Can supply var value from cmd line arg (cli)---> ansible-playbook -i inv -e ansible_user=centos -e ansible_password=DevOps321 -e CITY=Bangalore 002-vars.yaml
+
+# If you want to change the existing value of the var you can do it through cli 
+#ansible-playbook -i inv -e ansible_user=centos -e ansible_password=DevOps321 -e CITY=Bangalore -e URL=cli.google.com 002-vars.yaml
+
+
+
 
 
 
