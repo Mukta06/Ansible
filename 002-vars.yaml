@@ -2,7 +2,7 @@
 
 ### When to use quotes and when not to use quotes in YAML while dealing with variables ?
 
-###  ---> if in your print msg, if you just have varaible, then it's a must to enclose them in "" 's 
+###  ---> if in your print msg, if you just have varaible, then it's a must to enclose them in "" 's  --> msg: "{{CITY}}"
 
 - name: Demo On Variables
   hosts: all
