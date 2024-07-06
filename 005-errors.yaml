@@ -4,6 +4,7 @@
     - name: Check Tomcat is Running
       ansible.builtin.shell: ps -ef|grep java| grep -v grep
       register: OUT
+      ignore_errors: true
 
     - name: Run Shipping
       ansible.builtin.debug:
