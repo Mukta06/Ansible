@@ -12,6 +12,7 @@
     - name: Printing only the exitcode
       ansible.builtin.set_fact:
         EXITCODE: "{{OUT.rc}}"
+      ansible.builtin.debug:
         msg: The exitcode of the last exctd cmd is {{EXITCODE}}
 
     - name: Printing uptime 
