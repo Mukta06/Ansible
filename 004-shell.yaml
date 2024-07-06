@@ -1,4 +1,6 @@
 - name: Demo on using shell module
   hosts: all
-  ansible.builtin.shell: uptime
-  register: OUT
+  task:
+    - name: Running uptime shell cmd
+      ansible.builtin.shell: uptime
+      register: OUT
