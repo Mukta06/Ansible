@@ -10,7 +10,7 @@
         msg: "{{OUT}}"
 
     - name: Printing only the exitcode
-      ansible.builtin.set_facts:
+      ansible.builtin.set_fact:
         EXITCODE: "{{OUT.rc}}"
         msg: The exitcode of the last exctd cmd is {{EXITCODE}}
 
