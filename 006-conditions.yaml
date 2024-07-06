@@ -14,5 +14,5 @@
 
     - name: Run the flag
       ansible.builtin.debug:
-        msg: flag is false
+        msg: flag is true
       when: flag 
