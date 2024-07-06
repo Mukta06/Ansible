@@ -8,3 +8,12 @@
     - name: Printing the result of shell cmd
       ansible.builtin.debug:
         msg: "{{OUT}}"
+
+    - name: Printing only the exitcode
+      EXITCODE: OUT.rc
+      ansible.builtin.debug:
+        msg: The exitcode of the last cmd is {{EXITCODE}}
+
+    - name: Printing uptime 
+      ansible.builtin.debug:
+        msg: Uptime of the server is {{OUT.stdout}}
