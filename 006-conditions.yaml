@@ -20,4 +20,4 @@
     - name: Run this when variable is not defined
       ansible.builtin.debug:
         msg: variable is not defined
-      when: Varbl is not defined
+      when: Varbl is  defined
