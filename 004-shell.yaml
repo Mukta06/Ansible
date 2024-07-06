@@ -2,5 +2,9 @@
   hosts: all
   tasks:
     - name: Running uptime shell cmd
-      ansible.builtin.shell: uptime
+      ansible.builtin.shell: uptime    # By default shell cmd will not print the result 
       register: OUT
+
+    - name: Printing the result of shell cmd
+      ansible.builtin.debug:
+        msg: "{{OUT}}"
