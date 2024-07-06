@@ -5,6 +5,9 @@
 # A fact nothing but the properties of the VM's. 
 
 # In ansible, if you attempt to print a variable that is not decalred, ANSIBLE throws an exception!
+
+# Cmd to gather facts is : ansible all -i inv -e ansible_user=centos -e ansible_password=DevOps321 -m gather_facts
+# the above cmd gives out put in json format
 - name: Demo On Vars 
   hosts: all 
   vars:                          # Play level variables : if you declare a variable at play level, all tasks of the play      inherit them

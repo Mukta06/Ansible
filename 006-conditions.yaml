@@ -1,0 +1,18 @@
+- name: Demo On Conditions
+  hosts: all
+  vars: 
+    flag: true
+  tasks:
+    - name: Run this only when the distro is Centos
+      ansible.buitlin.debug:
+        msg: OS Distro is {{ansible_distribution}}
+      when: ansible_distribution == "CentOS"
+
+    - name: Run this only when the distro is Ubuntu
+      ansible.buitlin.debug:
+        msg: OS Distro is {{ansible_distribution}}
+
+    - name: Run the flag
+      ansible.builtin.debug:
+        msg: flag is false
+      when: flag is true
