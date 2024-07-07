@@ -1,6 +1,6 @@
 - name: Demo on Running Play as User/ Root User/
   hosts: all
-  #become: yes # It will run command as root user
+  become: yes # It will run command as root user
   tasks:
     - name: Checking User
       ansible.builtin.shell: id 
