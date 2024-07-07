@@ -1,5 +1,6 @@
 - name: Demo on Running Play as User/ Root User/
   hosts: all
+  become: yes
   tasks:
     - name: Checking User
       ansible.builtin.shell: id 
