@@ -12,9 +12,14 @@
         msg: "User Details are {{OUT.stdout}}" # If we print only OUT we get all the output in json format
 # if we want only particular details then use that attribute to fetch the related output
 
+
+# One play can have only one module
     - name: Creating roboshop useraccount
       ansible.builtin.user:
         name: robot
+
+
+# Once the user is created it will not creat nxt tim just OK not changed
 
     - name: checking created user
       ansible.builtin.shell: id robot
