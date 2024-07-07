@@ -22,4 +22,4 @@
 
     - name: Printing the details of the user created
       ansible.builtin.debug:
-        msg: "Created user details are {{OP}}"
+        msg: "Created user details are {{OP.stdout}}"
