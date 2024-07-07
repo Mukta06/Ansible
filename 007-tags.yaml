@@ -38,4 +38,7 @@
         msg: Starting DB
       tags: db
 
+# cmd to run with tag name is: ansible-playbook -i inv -e ansible_user=centos -e ansible_password=DevOps321 007-tags.yaml -t app
+
+
 
