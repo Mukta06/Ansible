@@ -17,6 +17,6 @@
 
     - name: Printing the details of the user created
       ansible.builtin.shell: id robot
-      register: OUT
+      register: OP
       ansible.builtin.debug:
-        msg: "Created user details are {{OUT}}"
+        msg: "Created user details are {{OP}}"
