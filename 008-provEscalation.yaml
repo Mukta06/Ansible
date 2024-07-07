@@ -1,10 +1,11 @@
 - name: Demo on Running Play as User/ Root User/
   hosts: all
-  become: yes
+  #become: yes # It will run command as root user
   tasks:
     - name: Checking User
       ansible.builtin.shell: id 
       register: OUT
+      ignore_errors: true
     
     - name: Printing the User details
       ansible.builtin.debug:
