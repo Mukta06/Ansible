@@ -9,3 +9,7 @@
       ansible.builtin.debug:
         msg: "User Details are {{OUT.stdout}}" # If we print only OUT we get all the output in json format
 # if we want only particular details then use that attribute to fetch the related output
+
+    - name: Creating roboshop useraccount
+      ansible.builtin.user:
+        name: robot
