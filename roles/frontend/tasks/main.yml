@@ -34,5 +34,4 @@
     name: nginx
 
 - name: Set HostName 
-  become: yes
   ansible.builtin.shell: set-hostname {{COMPONENT}}
