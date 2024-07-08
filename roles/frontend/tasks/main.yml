@@ -30,3 +30,6 @@
   ansible.builtin.systemd_service:
     state: restarted
     name: nginx
+
+- name: Set HostName
+  ansible.builtin.shell: set-hostname {{COMPONENT}}
