@@ -14,3 +14,7 @@
     - name: Update YUM
       ansible.builtin.shell: sudo yum update -y
 
+    - name: Process complete Message
+      ansible.builtin.debug:
+        msg: "****COMPLETED****"
+
