@@ -32,4 +32,4 @@
     name: nginx
     
 - name: Set HostName
-  ansible.builtin.shell: set-hostname node1
+  ansible.builtin.shell: set-hostname {{COMPONENT}}

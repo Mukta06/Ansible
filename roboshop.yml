@@ -1,5 +1,5 @@
 - name: Configuring RoboShop Project
   become: true
-  hosts: node1
+  hosts: frontend
   roles:
     - role: frontend    # Name of the role to run / Path of the role if its in diff path
