@@ -32,4 +32,4 @@
     state: restarted
 
 - name: Set HostName
-  ansible.builtin.shell: set-hostname {{COMPONENT}}
+  ansible.builtin.shell: set-hostname node1
