@@ -1,0 +1,7 @@
+- name: Demo on Copy File
+  hosts: all
+  tasks: 
+    - name: Copy file
+      ansible.builtin.copy:
+        src: inv
+        dest: /home/centos
