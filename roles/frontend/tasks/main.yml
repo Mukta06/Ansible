@@ -28,8 +28,8 @@
 
 - name: Restarting {{COMPONENT}} 
   ansible.builtin.systemd_service:
-    name: nginx
     state: restarted
-
+    name: nginx
+    
 - name: Set HostName
   ansible.builtin.shell: set-hostname node1
