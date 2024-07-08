@@ -1,18 +1,19 @@
 - name: Eliminating Mirror Error
   hosts: all
+  become: yes
   tasks: 
     - name: change Distro
       ansible.builtin.shell: cd /etc/yum.repos.d/
     
 
     - name: Search and Replace
-      ansible.buitlin.shell: sudo sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+      ansible.buitlin.shell: sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
 
     - name: Search and Comment
-      ansible.builtin.shell: sudo sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+      ansible.builtin.shell: sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
 
     - name: Update YUM
-      ansible.builtin.shell: sudo yum update -y
+      ansible.builtin.shell: yum update -y
 
     - name: Process complete Message
       ansible.builtin.debug:
