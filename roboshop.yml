@@ -1,5 +1,5 @@
 - name: Configuring RoboShop Project
   become: true
-  hosts: {{COMPONENT}}
+  hosts: frontend
   roles:
-    - role: {{COMPONENT}}    # Name of the role to run / Path of the role if its in diff path
+    - role: frontend    # Name of the role to run / Path of the role if its in diff path
