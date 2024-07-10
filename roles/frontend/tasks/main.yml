@@ -30,6 +30,8 @@
   ansible.builtin.service:
     state: restarted
     name: nginx
+    enabled: yes
+    daemon_reload: yes
     
 - name: Set HostName
   ansible.builtin.shell: set-hostname {{COMPONENT}}
