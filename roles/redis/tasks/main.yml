@@ -12,11 +12,18 @@
     path: /etc/redis.conf
     regexp: '127.0.0.1'
     replace: '0.0.0.0'
-    remote_src: yes
+
 
 - name: Updating IP's in Config file2
   ansible.builtin.replace:
     path: /etc/redis/redis.conf
     regexp: '127.0.0.1'
     replace: '0.0.0.0'
-    remote_src: yes
+    
+
+- name: Starting {{COMPONENT}} Services
+  ansible.builtin.service:
+    name: redis
+    state: started
+    enabled: yes
+    daemon_reload: yes
