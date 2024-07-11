@@ -28,6 +28,12 @@
     dest: /home/{{APPUSER}}/{{COMPONENT}}
     remote_src: yes
 
+- name: Change file Ownership
+  ansible.builtin.file:
+    path: /home/{{APPUSER}}/{{COMPONENT}}
+    owner: "{{APPUSER}}"
+    group: "{{APPUSER}}"
+
 
 - name: Set HostName
   ansible.builtin.shell: set-hostname {{COMPONENT}}
