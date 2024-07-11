@@ -25,7 +25,7 @@
     state: absent
 
 - name: Copying Files to {{APPUSER}} Dir
-  ansible.builtin.file:
+  ansible.builtin.copy:
     src: /tmp/{{COMPONENT}}-main
     dest: /home/{{APPUSER}}/{{COMPONENT}}
     remote_src: yes
