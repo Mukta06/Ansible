@@ -30,13 +30,11 @@
     dest: /home/{{APPUSER}}/{{COMPONENT}}
     remote_src: yes
 
-
 - name: Changing the ownership of the Artifacts
   ansible.builtin.file:
     path: /home/{{APPUSER}}/{{COMPONENT}}
     owner: "{{APPUSER}}"
     group: "{{APPUSER}}"
-
 
 - name: Install node.js packages
   community.general.npm:
