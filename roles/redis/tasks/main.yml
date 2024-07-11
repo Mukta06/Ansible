@@ -1,0 +1,22 @@
+- name: Set HostName
+  ansible.builtin.shell: set-hostname {{COMPONENT}}
+
+- name: Installing {{COMPONENT}} Repo
+  ansible.builtin.shell: dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
+
+- name: Enabling {{COMPONENT}} Services
+  ansible.builtin.shell: dnf module enable redis:remi-6.2 -y && dnf install redis -y
+
+- name: Updating IP's in Config file1
+  ansible.builtin.replace:
+    path: /etc/redis.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
+    remote_src: yes
+
+- name: Updating IP's in Config file2
+  ansible.builtin.replace:
+    path: /etc/redis/redis.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
+    remote_src: yes
