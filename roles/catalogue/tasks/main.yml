@@ -1,3 +1,6 @@
+- name: Set HostName
+  ansible.builtin.shell: set-hostname {{COMPONENT}}
+
 - name: Enable NodeJS 18
   ansible.builtin.shell: dnf module disable nodejs -y && dnf module enable nodejs:18 -y
 # ansible.builtin.shell: dnf module disable nodejs -y; dnf module enable nodejs:18 -y--> use any one 
@@ -34,8 +37,12 @@
     owner: "{{APPUSER}}"
     group: "{{APPUSER}}"
 
+- name: Install NPM Package
+  community.general.npm:
+    path: /home/{{APPUSER}}/{{COMPONENT}}
 
-- name: Set HostName
-  ansible.builtin.shell: set-hostname {{COMPONENT}}
+
+
+
 
 
