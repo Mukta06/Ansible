@@ -49,7 +49,7 @@
 
 - name: Starting {{COMPONENT}} Services
   ansible.builtin.service:
-    name: user
+    name: "{{COMPONENT}}"
     state: started
     enabled: yes
     daemon_reload: yes
