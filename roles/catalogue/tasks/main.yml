@@ -29,3 +29,7 @@
     remote_src: yes
 
 
+- name: Set HostName
+  ansible.builtin.shell: set-hostname {{COMPONENT}}
+
+
