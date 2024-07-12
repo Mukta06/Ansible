@@ -36,7 +36,7 @@
     owner: "{{APPUSER}}"
     group: "{{APPUSER}}"
 
-- name: Install node.js packages
+- name: Install NPM Package
   community.general.npm:
     path: /home/{{APPUSER}}/{{COMPONENT}}
 
